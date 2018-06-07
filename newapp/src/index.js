@@ -1,8 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+
+
+function welcome(props){
+       return  <h1>hello,{props.name}</h1>;
+
+}
+const element = <welcome name ="vikas" />;
+ReactDOM.render(
+    <welcome name ="vikas" />,
+    document.getElementById('root')
+
+);
