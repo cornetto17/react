@@ -33,7 +33,7 @@ ol, ul {
 }
 
 .square:hover{
-    background-color: aquamarine;
+    background-color: #1cffa3;
 }
 .square:focus {
     outline: none;
