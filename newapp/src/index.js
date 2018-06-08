@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './index.css';
 
 class App extends React.Component{
     constructor(props){
@@ -8,11 +9,11 @@ class App extends React.Component{
             inputs: [],
             value : "",
             temp :"Enter Feedback :  "
-         }
+         };
 
-            this.handleclick =this.handleclick.bind(this)
-            this.deleteitem = this.deleteitem.bind(this)
-            this.changevalue = this.changevalue.bind(this)
+            this.handleclick =this.handleclick.bind(this);
+            this.deleteitem = this.deleteitem.bind(this);
+            this.changevalue = this.changevalue.bind(this);
             this.handleSubmit = this.handleSubmit.bind(this)
         }
 
@@ -64,9 +65,9 @@ class App extends React.Component{
 
             <Printlist inputs={this.state.inputs} />
             <p/>
-            <textarea name="temp" value={this.state.temp} onChange={this.changevalue}></textarea>
+            <textarea name="temp" value={this.state.temp} onChange={this.changevalue} />
 
-            <p></p>
+            <p />
 
         </div>
         )
@@ -88,4 +89,4 @@ ReactDOM.render(
     <App />,
     document.getElementById('root')
 
-)
+);
