@@ -57,7 +57,7 @@ class App extends React.Component{
 
         <div>
 
-            <input type={"text"} name="value" id="input" value={this.state.value} onChange={this.changevalue} />
+            <input type="text" name="value" id="input" value={this.state.value} onChange={this.changevalue} />
             <button onClick={this.handleclick}> Add </button>
             <button onClick={this.deleteitem}>Delete</button>
             <p/>
