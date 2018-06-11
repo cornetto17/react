@@ -3,3 +3,19 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.checkbox{
+  margin-left: 5px;
+  padding: 5px;
+}
+
+.search{
+  font-size: 16px;
+  margin: 10px;
+}
+
+.content{
+  margin: 8%;
+  border: 2px solid #999999;
+
+}
