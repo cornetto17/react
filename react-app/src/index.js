@@ -3,6 +3,29 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import itemdata from './data.json';
 
+class Errorclass extends React.Component{
+    constructor(props){
+        super(props);
+        this.state={
+            haserror : false
+        };
+    }
+    componentDidCatch(error, info){
+        this.setState({haserror : true});
+       // logErrorToMyService(error, info);
+    }
+
+    render()
+    {
+        if(this.state.haserror)
+        {
+            return <h1>Error </h1>;
+        }
+        else return this.props.children;
+    }
+}
+
+
 class Propertyfilter extends React.Component{
     constructor(props){
         super(props);
@@ -29,16 +52,20 @@ class Propertyfilter extends React.Component{
     render()
     {
         return(
+            <Errorclass>
         <div>
             <Inputsearch
                 text={this.state.searchtext}
                 checked={this.state.isselected}
                 ontextchange={this.handleinput}
                 oncheck={this.handlecheckbox}
+
             />
-            <br/>
+
             <Showcontent data={this.state}/>
-        </div>);
+        </div>
+        </ Errorclass>
+        );
     }
 
 }
@@ -48,7 +75,7 @@ class Inputsearch extends React.Component{
     render(){
         return(
             <div>
-                <input type="text"  value={this.props.text} className="search" onChange={this.props.ontextchange} />
+                <input  placeholder="search..." type="text"  value={this.props.text} className="search" onChange={this.props.ontextchange} />
                 <br/>
                 <label className="checkbox">
                 <input type="checkbox"  checked={this.props.checked}  onChange={this.props.oncheck}/>
@@ -67,7 +94,7 @@ class Showcontent extends React.Component{
 
 
     render(){
-        const element = itemdata.map((item)=>{return <Productrow item={item} data={this.props.data}/>});
+        const element = itemdata.map((item)=>{return <Productrow  key={item.id} item={item} data={this.props.data}/>});
 
         return(
         <div className="content">
@@ -98,15 +125,15 @@ class Productrow extends React.Component{
         {
             return(
 
-                <tr>
-                    <td> { this.props.item.name }</td>
-                    <td> { this.props.item.price}</td>
+                <tr >
+                    <td  > { this.props.item.name }</td>
+                    <td > { this.props.item.price}</td>
                 </tr>
             )
         }
         else
         {
-            return (<tr></tr>);
+            return <React.Fragment> </React.Fragment>;
         }
 
     }

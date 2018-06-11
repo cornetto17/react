@@ -16,6 +16,20 @@ body {
 
 .content{
   margin: 8%;
+  width: 30%;
   border: 2px solid #999999;
 
+}
+
+table{
+  width: 100%;
+
+}
+
+td{
+  padding: 5px;
+}
+
+tr:hover{
+  background-color: #ededed;
 }
