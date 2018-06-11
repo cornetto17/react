@@ -133,7 +133,7 @@ class Productrow extends React.Component{
         }
         else
         {
-            return <React.Fragment> </React.Fragment>;
+            return "";
         }
 
     }
