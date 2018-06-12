@@ -109,14 +109,15 @@ class Showcontent extends React.Component{
         return(
         <div className="content">
             <table>
-                <caption>Item List</caption>
-                <tbody>
+                <colgroup>
+                    <col className="column1"></col>
+                    <col className="column2" ></col>
+                </colgroup>
                 <tr>
                     <th>Name</th>
                     <th>Price</th>
                 </tr>
                 {element}
-                </tbody>
             </table>
         </div>);
     }
@@ -136,14 +137,14 @@ class Productrow extends React.Component{
             return(
 
                 <tr >
-                    <td  > { this.props.item.name }</td>
-                    <td > { this.props.item.price}</td>
+                    <td className="td1" > { this.props.item.name }</td>
+                    <td  className="td2" on> { this.props.item.price}</td>
                 </tr>
             )
         }
         else
         {
-            return "";
+            return <tr/>;
         }
 
     }
